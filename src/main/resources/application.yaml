@@ -1,0 +1,26 @@
+server:
+  servlet:
+    context-path: /airlineRadar/v1
+  port: 8080
+
+spring:
+  application:
+    name: AirlineRadar
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/bd_airlineradar?serverTimezone=UTC
+    username: root
+    password: 47305828A
+  jpa:
+    properties.hibernate.dialect: org.hibernate.dialect.MySQLDialect
+    properties.hibernate.show_sql: true
+    open-in-view: false
+
+
+airline-radar:
+  version: /v1
+  form:
+    base: "/forms"
+    retrieveForms: ""
+    retrieveSectionsByFormId: "/{formId}/sections"
+    createForm: ""
