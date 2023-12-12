@@ -2,6 +2,7 @@ package com.nttdata.AirlineRadar.api.controller.rest.impl.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.nttdata.AirlineRadar.infraestructure.SectionEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,15 +11,15 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class SectionRest {
+public class SectionQuestionRest {
 
     @JsonProperty("id")
-    private Long sectionId;
+    private Long questionId;
 
     @JsonProperty("title")
-    private String sectionTitle;
+    private String questionTitle;
 
-    @JsonProperty("description")
-    private String description;
+    @JsonProperty("section")
+    private SectionRest section;
 
 }

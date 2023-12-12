@@ -24,3 +24,6 @@ airline-radar:
     retrieveForms: ""
     retrieveSectionsByFormId: "/{formId}/sections"
     createForm: ""
+  section:
+    base: "/sections"
+    retrieveQuestionsBySectionId: "/{sectionId}/questions"

@@ -10,15 +10,18 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class SectionRest {
+public class AirlineRadarResponsePageRestSectionQuestionRest {
 
-    @JsonProperty("id")
-    private Long sectionId;
+    @JsonProperty("status")
+    private String status;
 
-    @JsonProperty("title")
-    private String sectionTitle;
+    @JsonProperty("code")
+    private String code;
 
-    @JsonProperty("description")
-    private String description;
+    @JsonProperty("message")
+    private String message;
+
+    @JsonProperty("data")
+    private PageRestSectionQuestion data;
 
 }

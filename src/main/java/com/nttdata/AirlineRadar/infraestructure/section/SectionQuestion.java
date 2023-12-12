@@ -1,6 +1,7 @@
 package com.nttdata.AirlineRadar.infraestructure.section;
 
 
+import com.nttdata.AirlineRadar.infraestructure.SectionEntity;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -19,10 +20,14 @@ import java.util.List;
         @Id
         @Column(name = "id")
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private String questionId;
+        private Long questionId;
 
         @Column (name = "title")
         private String questionTitle;
+
+        @ManyToOne
+        @JoinColumn(name = "section_id")
+        private SectionEntity section;
 
         @Transient//Marcar campos que no deban ser persistidos
         private List<ResponseOption> responses = new ArrayList<>();

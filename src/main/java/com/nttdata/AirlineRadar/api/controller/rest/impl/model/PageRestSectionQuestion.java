@@ -2,23 +2,23 @@ package com.nttdata.AirlineRadar.api.controller.rest.impl.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class SectionRest {
+public class PageRestSectionQuestion {
 
-    @JsonProperty("id")
-    private Long sectionId;
+    @JsonProperty("content")
+    private @Valid List<SectionQuestionRest> content = null;
 
-    @JsonProperty("title")
-    private String sectionTitle;
-
-    @JsonProperty("description")
-    private String description;
+    @JsonProperty("page")
+    private PaginationInfo page;
 
 }

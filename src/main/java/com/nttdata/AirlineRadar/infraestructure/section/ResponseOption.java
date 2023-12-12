@@ -22,4 +22,5 @@ public class ResponseOption {
 
     @Column(name = "responseTitle")
     private String responseTitle;
+
 }

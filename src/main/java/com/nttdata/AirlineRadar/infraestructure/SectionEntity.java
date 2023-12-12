@@ -21,7 +21,7 @@ public class SectionEntity {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String sectionId;
+    private Long sectionId;
 
     @Column(name = "title")
     private String sectionTitle;
@@ -32,7 +32,7 @@ public class SectionEntity {
             @JoinColumn(name = "formId", referencedColumnName = "id")} )
     private Set<FormEntity> forms;
 
-    @Transient
+    @OneToMany(mappedBy = "section", cascade = CascadeType.ALL, orphanRemoval = true)// orphanRemoval sirve para eliminar automaticamente en la base de datos si se quita de la lista.
     private List<SectionQuestion> questions = new ArrayList<>();
 
 }
